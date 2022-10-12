@@ -1,0 +1,16 @@
+.contenedor-pokemon, .contenedor-nombres-pokemon{
+    border: 1px solid red;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 24px;
+}
+.img-pokemon, .nombre-pokemon{
+    border: 1px solid green;
+    width: 160px;
+    height: 200px;
+}
+.img{
+    width: 80%;
+}

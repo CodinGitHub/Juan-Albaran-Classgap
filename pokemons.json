@@ -1,0 +1,14 @@
+[
+    {
+      "name": "picachu",
+      "url": "./img/pikachu.png"
+    },
+    {
+        "name": "charmander",
+        "url": "./img/charmander.png"
+    },
+    {
+        "name": "bulbasur",
+        "url": "./img/bulbasur.png"
+    }
+]
