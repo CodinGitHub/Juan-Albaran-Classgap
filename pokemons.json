@@ -1,14 +1,17 @@
 [
     {
+      "id": 1,
       "name": "picachu",
       "url": "./img/pikachu.png"
     },
     {
+        "id": 2,
         "name": "charmander",
         "url": "./img/charmander.png"
     },
     {
+        "id":3,
         "name": "bulbasur",
-        "url": "./img/bulbasur.png"
+        "url": "./img/bulbasur2.svg"
     }
 ]
