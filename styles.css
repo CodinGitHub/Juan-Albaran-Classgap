@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .contenedor-pokemon, .contenedor-nombres-pokemon{
     border: 1px solid red;
     height: 300px;
@@ -22,4 +28,27 @@
 .seleccionado, .parcorrecto{
     border: 5px solid red;
     background-color: aquamarine;  
+}
+.recuadro-nombre{
+    height: 100%;
+}
+.background-modal{
+    background-color: rgba(0, 0, 0, 0.45);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.modal{
+    position: absolute;
+    top: 300px;
+    left: 250px;/* Calc */
+    width: 300px;  
+    height: 100px;
+    background-color: rgb(201, 72, 237);
+    border-radius: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

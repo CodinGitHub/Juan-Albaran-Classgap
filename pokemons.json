@@ -12,6 +12,41 @@
     {
         "id":3,
         "name": "bulbasur",
-        "url": "./img/bulbasur2.svg"
+        "url": "./img/bulbasur.png"
+    },
+    {
+        "id":4,
+        "name": "caterpie",
+        "url": "./img/caterpie.png"
+    },
+    {
+        "id":5,
+        "name": "clefairy",
+        "url": "./img/clefairy.png"
+    },
+    {
+        "id":6,
+        "name": "diglett",
+        "url": "./img/diglett.png"
+    },
+    {
+        "id":7,
+        "name": "meowth",
+        "url": "./img/meowth.png"
+    },
+    {
+        "id":8,
+        "name": "pidgey",
+        "url": "./img/pidgey.png"
+    },
+    {
+        "id":9,
+        "name": "squirtle",
+        "url": "./img/squirtle.png"
+    },
+    {
+        "id":10,
+        "name": "psyduck",
+        "url": "./img/psyduck.png"
     }
 ]
