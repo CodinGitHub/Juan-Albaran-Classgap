@@ -4,9 +4,13 @@
     box-sizing: border-box;
 }
 
+h1, p {
+    text-align: center;
+}
+
 .contenedor-pokemon, .contenedor-nombres-pokemon{
     border: 1px solid red;
-    height: 300px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -41,8 +45,9 @@
 }
 .modal{
     position: absolute;
-    top: 300px;
-    left: 250px;/* Calc */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 300px;  
     height: 100px;
     background-color: rgb(201, 72, 237);
@@ -51,4 +56,29 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+
+section.contenedor-nombres-pokemon {
+    float: right;
+    display: block;
+}
+
+section.contenedor-pokemon {
+    float: left;
+    display: block;
+}
+.resultado{
+    border: 1px solid red;
+    text-align: center;
+    display: flex;
+}
+.resultado__texto{
+    margin-top: 60px;
+}
+.resultado__imagen{
+
+}
+.resultado__imagen img{
+    width: 50%;
 }

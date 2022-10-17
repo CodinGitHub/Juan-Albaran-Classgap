@@ -1,5 +1,6 @@
 // Importando el archivo json
-import data from './pokemons.json' assert {type: 'json'}
+// import data from './pokemons.json' assert {type: 'json'}
+import data from './liga.json' assert {type: 'json'}
 desordenarArreglo(data);
 
 // Configuracion inicial
@@ -8,12 +9,24 @@ let tiempoRestante = 10; // segundos
 let pokemonesEncontrados = 0
 let tiempoRegresivoModal = 3; //segundos
 
+const haJugado = localStorage.getItem('haJugado')
+
+// Mostrando resultados al final
+let mainContainer = document.querySelector('.main-container')
+
 //Cargado de sonidos
 let perderSonido = new Audio('./sonidos/perder.wav');
 let seleccionarSonido = new Audio('./sonidos/seleccionar.wav');
 
 //Seleccionando el contenedor de las imagenes
 const contenedorPokemon = document.querySelector('.contenedor-pokemon');
+
+//Seleccionando todo el juego
+let game = document.querySelector('.game')
+
+if(haJugado === 'si'){
+    game.innerHTML = `<p class="yajugo">Ya jusgaste</p>`
+}
 
 //Seleccionar solamente un numero determinado de pokemones
 
@@ -34,11 +47,12 @@ dataRecortada.forEach( pokemon => {
 //Seleccionando el contenedor de los nombres
 const contenedorNombresPokemon = document.querySelector('.contenedor-nombres-pokemon');
 
-//Dibujando el nombre de los pokemones
+//Dibujando la camiseta
+{/* <p class="recuadro-nombre">${pokemon.name}</p> */}
 arreglosNombres.forEach( pokemon => {
     contenedorNombresPokemon.innerHTML += `
     <div class="nombre-pokemon">
-        <p class="recuadro-nombre">${pokemon.name}</p>
+        <img class="recuadro-nombre" src="${pokemon.urlt}" alt="${pokemon.name}">
     </div>`
 });
 
@@ -74,7 +88,7 @@ nombres.forEach( nombre=>{
     nombre.addEventListener('click', evento=>{
         seleccionarSonido.play()
         elementoNombreActual = evento.target
-        segundoClick = evento.target.innerText;
+        segundoClick = evento.target.alt;
         let resultado = comprarNombres()
         if(resultado === true){
             elementoImagenActual.classList.add('parcorrecto')
@@ -91,10 +105,13 @@ nombres.forEach( nombre=>{
     });
 } )
 
-// Mostrando el modal
+
+// Seleccionando el modal
 let modal = document.querySelector('.modal');
 let modalSegundos = document.querySelector('.modal-segundos')
 let backgroundModal = document.querySelector('.background-modal')
+
+// Mostrando el modal
 
 let contadorRegresivoModal = setInterval(()=>{
     modalSegundos.innerText = `${tiempoRegresivoModal} segundos`
@@ -126,18 +143,10 @@ function inciarConteoRegresivo(){
     }, 1000)
 }
 
-// Mostrando resultados al final
-let mainContainer = document.querySelector('.main-container')
-
-
 //FUNCIONES
 function desordenarArreglo(array){
     array.sort(()=>Math.random() - 0.5)
 } 
-
-function desordenarArreglo2(array){
-    array.sort(()=>Math.random() - 0.1)
-}
 
 function comprarNombres(){
     if(primerClick == segundoClick){
@@ -154,18 +163,29 @@ function mostrarResultado(mensaje, gano){
     if(gano === true){
         mainContainer.innerHTML = `
         <div class="resultado">
-            <h2>${mensaje}</h2>
-            <img src="./img/trofeo.png" alt="">
-            <p>Has completado ${pokemonesEncontrados} de ${pokemonesAMostrar} pokemones</p>
+            <div class="resultado__texto">
+                <h2>${mensaje}</h2>
+                <p>Has completado ${pokemonesEncontrados} de ${pokemonesAMostrar} pokemones</p>
+            </div>
+            <div class="resultado__imagen">
+                <img src="./img/trofeo.png" alt="">
+            </div>
+
         </div>`
     }else{
         mainContainer.innerHTML = `
         <div class="resultado">
-            <h2>${mensaje}</h2>
-            <img src="./img/triste.png" alt="">
-            <p>Has completado ${pokemonesEncontrados} de ${pokemonesAMostrar} pokemones</p>
+            <div class="resultado__texto">
+                <h2>${mensaje}</h2>
+                <p>Has completado ${pokemonesEncontrados} de ${pokemonesAMostrar} pokemones</p>
+            </div>
+            <div class="resultado__imagen">
+                <img src="./img/triste.png" alt="">
+            </div>
+
         </div>`
     }
 
+    // localStorage.setItem('haJugado', 'si')
    
 }

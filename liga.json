@@ -1,0 +1,31 @@
+[
+    {
+      "id": 1,
+      "name": "Gabriel Jesus",
+      "url": "./img/gabriel-jesus.png",
+      "equipo": "Arsenal",
+      "urlt": "./img/arsenal.png"
+    },
+    {
+        "id": 2,
+        "name": "Kieran Trippier",
+        "url": "./img/kieran-trippier.png",
+        "equipo": "Newcastle",
+        "urlt": "./img/newcastle.png"
+    },
+    {
+        "id":3,
+        "name": "Luis Diaz",
+        "url": "./img/luis-diaz.png",
+        "equipo": "Liverpool",
+        "urlt": "./img/liverpool.png"
+    },
+    {
+        "id":4,
+        "name": "Phillipe Coutinho",
+        "url": "./img/phillipe-coutinho.png",
+        "equipo": "Totemham",
+        "urlt": "./img/totemham.png"
+    }
+   
+]
